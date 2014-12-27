@@ -1,0 +1,20 @@
+<!-- NavBar -->
+<div ng-include="'js/navbar/navbar.html'" ></div>
+<!-- Maps -->
+<div ng-controller="MapsHomeController">
+    <openlayers ol-center="center" ol-controls="controls" ol-defaults="defaults" ol-view="view" ol-layers="layers"></openlayers>
+</div>
+<!-- main content -->
+<div class="container">
+    <div class="well">
+      <h1>Contact</h1>
+      <p>You can contact us by e-mail or in the Google group forum.</p>
+      <h2>E-mail</h2>
+      <a href="mailto:project-citizencyberscience-coordinators@cern.ch">
+        <i class="fa fa-envelope"></i> 
+         project-citizencyberscience-coordinators@cern.ch
+      </a>
+      <h2>Forum</h2>
+      <a href="https://groups.google.com/forum/#!forum/forest-watchers"><i class="icon icon-comment"></i> Google Group</a>
+    </div>
+</div>

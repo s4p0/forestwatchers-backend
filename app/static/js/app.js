@@ -3,7 +3,17 @@ angular.module('forestWatchers', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.d
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/home/home.html', 
-        controller: 'HomeController'})
+        templateUrl: 'js/home/home.html', 
+        controller: 'HomeController'
+    })
+      .when('/mission', {
+        templateUrl: 'js/mission/mission.html', 
+    })
+      .when('/contact', {
+        templateUrl: 'js/contact/contact.html', 
+    })
+      .when('/team', {
+        templateUrl: 'js/team/team.html', 
+    })
       .otherwise({redirectTo: '/'});
   }]);
