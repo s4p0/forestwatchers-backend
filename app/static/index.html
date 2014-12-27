@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0">
   <title>ForestWatchers</title>
   <!-- bootstrap style -->
   <link href="lib/bootstrap-css/css/bootstrap.css" rel="stylesheet">
-  <link href="lib/bootstrap-css/css/bootstrap-theme.css" rel="stylesheet">
+  <!-- <link href="lib/bootstrap-css/css/bootstrap-theme.css" rel="stylesheet"> -->
+  <link href="lib/bootstrap-css/css/bootstrap-superhero.min.css" rel="stylesheet">
   <!-- openlayers and angular directives style -->
   <link href="lib/openlayers/css/ol.css" rel="stylesheet">
   <link href="lib/angular-openlayers-directive/css/angular-openlayers-directive.css" rel="stylesheet">
@@ -20,13 +21,13 @@
 
 
 
-  <div ng-view></div>
+  <div ng-view style="overflow-x: hidden"></div>
 
 
   <footer class="footer text-muted">
       
       <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> -->
 
               <a href="http://www.soros.org">
                   <img src="http://forestwatchers.net/assets/images/logos/soros.png">
@@ -49,7 +50,7 @@
               </a>
 
           </div>
-      </div>
+      <!-- </div> -->
 
   </footer>
 
@@ -68,7 +69,9 @@
 
 
   <script src="js/app.js"></script>
+  <script src="js/maps/maps-service.js"></script>
   <script src="js/home/home-controller.js"></script>
+  <script src="js/navbar/navbar-controller.js"></script>
   <script src="js/maps/maps.home-controller.js"></script>
   
 

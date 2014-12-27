@@ -7,11 +7,7 @@
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/home/felipecorrea/Dropbox/ForestWatchers/fwPortal/app/static/views"
-		},
-		{
-			"follow_symlinks": true,
-			"path": "/home/felipecorrea/Dropbox/ForestWatchers/fwPortal/app/static/js"
+			"path": "app/static/js"
 		}
 	],
 	"settings":
