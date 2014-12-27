@@ -28,7 +28,15 @@ angular.module('forestWatchers')
                             params: { LAYERS: 'DEFAULT:FAS_BRAZIL', TILED: true},
                         },
                         opacity: 1
-                }
+                },
+                mapbox_geographyclass: {
+                    visible: true,
+                    opacity: 0.5,
+                    source: {
+                        type: 'TileJSON',
+                        url: 'http://api.tiles.mapbox.com/v3/mapbox.geography-class.jsonp'
+                    }
+                },
             }
             
             $scope.controls = {
