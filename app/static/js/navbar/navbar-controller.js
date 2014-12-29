@@ -1,9 +1,24 @@
 angular.module('forestWatchers')
-.controller('NavBarDefaultController',['$scope','$location','MapsService',function($scope, $location, MapsService){
+.controller('NavBarDefaultController',['$rootScope','$scope','$location','MapsService',function($rootScope, $scope, $location, MapsService){
 
       $scope.isActiveLink = function(menu){
         return $location.$$url  == menu.url.replace("#", "/");
       }
+
+      $scope.menuLayers = []
+
+      $rootScope.$on('addLayers',
+        function(event, data){
+            $scope.menuLayers = data.menuLayers;        
+      });
+
+      $scope.showOrHideLayer = function(layer){
+        $rootScope.$broadcast('showOrHideLayer',{
+            "menuLayer" : layer
+        });
+      }
+
+
 
       $scope.menus = [
             {

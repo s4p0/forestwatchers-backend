@@ -1,48 +1,62 @@
 angular.module('forestWatchers')
-  .controller('MapsHomeController', ['$scope', function ($scope) {
+  .controller('MapsHomeController', ['$rootScope','$scope','MapsService', function ($rootScope, $scope, MapsService) {
 
     // angular.extend($scope, {
-        $scope.defaults = {
-                interactions: {
-                    mouseWheelZoom: false
+        $scope.defaults = MapsService.defaults;
+        $scope.controls = MapsService.controls;
+
+        $scope.center = {
+            lat: -10,
+            lon: -44.57,
+            zoom: 3.75
+        }
+
+        $scope.view = {
+            rotation: 0,
+        }
+
+        $scope.layers = {
+            main: {
+                visible: true,
+                source: {
+                        // type: 'ImageWMS',
+                        type: 'TileWMS',
+                        url: 'http://maps-citizenscience.rhcloud.com/geoserver/wms',
+                        params: { LAYERS: 'DEFAULT:FAS_BRAZIL', TILED: true},
+                    },
+                    opacity: 1
+            },
+            mapbox_geographyclass: {
+                visible: true,
+                opacity: 0.5,
+                source: {
+                    type: 'TileJSON',
+                    url: 'http://api.tiles.mapbox.com/v3/mapbox.geography-class.jsonp'
                 }
-            }
-            
-            $scope.center = {
-                lat: -10,
-                lon: -44.57,
-                zoom: 3.75
-            }
+            },
+        }
 
-            $scope.view = {
-                rotation: 0,
-            }
+        $scope.deactiveMapFullScreen = function(){
+                MapsService.controls.fullscreen = false;
+        }
 
-            $scope.layers = {
-                main: {
-                    visible: true,
-                    source: {
-                            // type: 'ImageWMS',
-                            type: 'TileWMS',
-                            url: 'http://maps-citizenscience.rhcloud.com/geoserver/wms',
-                            params: { LAYERS: 'DEFAULT:FAS_BRAZIL', TILED: true},
-                        },
-                        opacity: 1
-                },
-                mapbox_geographyclass: {
-                    visible: true,
-                    opacity: 0.5,
-                    source: {
-                        type: 'TileJSON',
-                        url: 'http://api.tiles.mapbox.com/v3/mapbox.geography-class.jsonp'
-                    }
-                },
+        $scope.enableMouseWheelZoom = function(){
+                MapsService.defaults.interactions.mouseWheelZoom = true;
+                $scope.layers.mapbox_geographyclass.visible = false;
+        }
+
+        $rootScope.$on('showOrHideLayer', function(event, data){
+            $scope.layers[data.menuLayer] = {
+                visible: true,
+                source: {
+                        // type: 'ImageWMS',
+                        type: 'TileWMS',
+                        url: 'http://maps-citizenscience.rhcloud.com/geoserver/wms',
+                        params: { LAYERS: data.menuLayer, TILED: true},
+                    },
+                    opacity: 1
             }
-            
-            $scope.controls = {
-                zoom: true,
-                fullscreen: true,
-                rotate: true
-            }
+        });
+
 
   }]);
