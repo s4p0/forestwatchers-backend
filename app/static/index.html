@@ -18,43 +18,28 @@
   <link href="css/app.css" rel="stylesheet">
 </head>
 <body>
-
+  <div ng-controller="MainCtrl">
+    
+  
   <!-- NavBar -->
   <div ng-include="'js/navbar/navbar.html'" ng-controller="NavBarDefaultController" ></div>
 
   <div ng-view style="overflow-x: hidden"></div>
 
-
+   {{test}}
   <footer class="footer text-muted">
       
       <div class="row">
-          <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"> -->
+        
+        <a ng-repeat="(key, value) in sponsors" href="{{value.external_url}}" >
+          <img ng-src="{{value.image_url}}">
+        </a>
 
-              <a href="http://www.soros.org">
-                  <img src="http://forestwatchers.net/assets/images/logos/soros.png">
-              </a>
-
-              <a href="http://www.unitar.org/unosat">
-                  <img src="http://forestwatchers.net/assets/images/logos/unitar.png">
-              </a>
-              
-              <a href="http://www.inpe.br">
-                  <img src="http://forestwatchers.net/assets/images/logos/inpe.png">
-              </a>
-
-              <a href="http://www.citizencyberscience.net">
-                  <img src="http://forestwatchers.net/assets/images/logos/ccc.png">
-              </a>
-
-              <a href="http://www.unifesp.br">
-                  <img src="http://forestwatchers.net/assets/images/logos/unifesp.png">
-              </a>
-
-          </div>
-      <!-- </div> -->
+      </div>
 
   </footer>
 
+  </div>
 
   <!-- // <script src="lib/jquery/dist/jquery.js"></script> -->
   <!-- // <script src="lib/jquery-ui/jquery-ui.js"></script> -->
@@ -70,11 +55,13 @@
 
 
   <script src="js/app.js"></script>
+  
   <script src="js/maps/maps-service.js"></script>
   <script src="js/home/home-controller.js"></script>
   <script src="js/navbar/navbar-controller.js"></script>
   <script src="js/maps/maps.home-controller.js"></script>
-  
+  <script src="js/result/result-controller.js"></script>
+  <script src="js/main/main-controller.js"></script>
 
 </body>
 </html>

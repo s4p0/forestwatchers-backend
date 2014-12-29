@@ -6,3 +6,5 @@
 db_repository
 flask
 node_modules
+.venv
+fwportal.sublime-workspace

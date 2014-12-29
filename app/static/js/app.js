@@ -18,5 +18,8 @@ angular.module('forestWatchers', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.d
       .when('/team', {
         templateUrl: 'js/team/team.html', 
     })
+      .when('/result', {
+        templateUrl: 'js/result/result.html', 
+    })
       .otherwise({redirectTo: '/'});
   }]);

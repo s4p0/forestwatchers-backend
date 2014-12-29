@@ -27,6 +27,11 @@ angular.module('forestWatchers')
                 "icon": "fa fa-envelope",
                 "label": "Contact",
             },
+            {
+                "url": "#result",
+                "icon": "fa fa-map-marker",
+                "label": "Last Results",
+            },
       ]
 
       $scope.layers = {
