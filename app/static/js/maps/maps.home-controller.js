@@ -16,17 +16,17 @@ angular.module('forestWatchers')
         }
 
         $scope.layers = {
+            // main: {
+            //     visible: true,
+            //     source: {
+            //             // type: 'ImageWMS',
+            //             type: 'TileWMS',
+            //             url: 'http://maps-citizenscience.rhcloud.com/geoserver/wms',
+            //             params: { LAYERS: 'DEFAULT:FAS_BRAZIL', TILED: true},
+            //         },
+            //         opacity: 1
+            // },
             main: {
-                visible: true,
-                source: {
-                        // type: 'ImageWMS',
-                        type: 'TileWMS',
-                        url: 'http://maps-citizenscience.rhcloud.com/geoserver/wms',
-                        params: { LAYERS: 'DEFAULT:FAS_BRAZIL', TILED: true},
-                    },
-                    opacity: 1
-            },
-            mapbox_geographyclass: {
                 visible: true,
                 opacity: 0.5,
                 source: {
@@ -51,8 +51,10 @@ angular.module('forestWatchers')
                 source: {
                         // type: 'ImageWMS',
                         type: 'TileWMS',
-                        url: 'http://maps-citizenscience.rhcloud.com/geoserver/wms',
-                        params: { LAYERS: data.menuLayer, TILED: true},
+                        // type: 'WMTS',
+                        url: 'http://maps-citizenscience.rhcloud.com/geoserver/gwc/service/wms?',
+                        params: { LAYERS: data.menuLayer, TILED: true, WIDTH: 512, HEIGHT: 512, VERSION: "1.1.1"},
+                        serverType: 'geoserver'
                     },
                     opacity: 1
             }

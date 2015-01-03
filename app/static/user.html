@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" ng-app="forestWatchers">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, height=device-height initial-scale=1.0">
+  <title>ForestWatchers</title>
+  <!-- bootstrap style -->
+  <link href="lib/bootstrap-css/css/bootstrap.css" rel="stylesheet">
+  <!-- <link href="lib/bootstrap-css/css/bootstrap-theme.css" rel="stylesheet"> -->
+  <link href="lib/bootstrap-css/css/bootstrap-superhero.min.css" rel="stylesheet">
+  <!-- openlayers and angular directives style -->
+  <link href="lib/openlayers/css/ol.css" rel="stylesheet">
+  <link href="lib/angular-openlayers-directive/css/angular-openlayers-directive.css" rel="stylesheet">
+  <!-- font-awesome style -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- application style -->
+  <link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+  <div ng-controller="MainCtrl">
+    
+  
+  <!-- NavBar -->
+  <div ng-include="'js/navbar/navbar.html'" ng-controller="NavBarDefaultController" ></div>
+
+  <div ng-view style="overflow-x: hidden"></div>
+
+   {{test}}
+  <footer class="footer text-muted">
+      
+      <div class="row">
+        
+        <a ng-repeat="(key, value) in sponsors" href="{{value.external_url}}" >
+          <img ng-src="{{value.image_url}}">
+        </a>
+
+      </div>
+
+  </footer>
+
+  </div>
+
+  <!-- // <script src="lib/jquery/dist/jquery.js"></script> -->
+  <!-- // <script src="lib/jquery-ui/jquery-ui.js"></script> -->
+  <script src="lib/lodash/dist/lodash.js"></script>
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-resource/angular-resource.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="lib/angular-ui-date/src/date.js"></script>
+  <script src="lib/openlayers/js/ol.js" type="text/javascript"></script>
+  <script src="lib/angular-openlayers-directive/js/angular-openlayers-directive.js" type="text/javascript"></script>
+  <script src="lib/x2js/xml2json.min.js" type="text/javascript" ></script>
+  
+
+
+  <script src="js/app.js"></script>
+  
+  <script src="js/maps/maps-service.js"></script>
+  <script src="js/home/home-controller.js"></script>
+  <script src="js/navbar/navbar-controller.js"></script>
+  <script src="js/maps/maps.home-controller.js"></script>
+  <script src="js/result/result-controller.js"></script>
+  <script src="js/main/main-controller.js"></script>
+
+</body>
+</html>

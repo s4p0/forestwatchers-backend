@@ -4,7 +4,7 @@ angular.module('forestWatchers')
     $scope.getLayers = function(){
         MapsService.listWMSLayers()
         .then(function(result){
-            var menuLayers = result.data.layer;
+            var menuLayers = result.data;
             $rootScope.$broadcast('addLayers',{
                 "menuLayers" : menuLayers
             });
